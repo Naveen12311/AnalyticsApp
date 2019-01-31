@@ -1,0 +1,191 @@
+<html>
+    <head>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+        function getIP(json) {
+            //document.write("My public IP address is: ", json.ip);
+        }
+    </script>
+    </head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <body>
+            <div class="container">
+               
+                <h1 style="text-align:center;">USER BEHAVIOUR</h1>
+                <div id="ip" style="text-align:center; color:indigo"></div>
+                <div style="height:30px;"></div>
+                <hr>
+                <div class="row">
+                 <div class="col-sm-5">
+                           <form>
+                            <label>Enter Some Text</label>
+                            <input type="text" name="text" class="form-control" value=" "
+                             onchange="change(this.value)"
+                             onclick="clicked()"
+                             onfocusin="focussin()"
+                             onfocusout="focussout()"
+                             onkeypress="keypress()"
+                             onmouseenter = "mouseentforinput()"
+                             onmouseleave = "mouseleaforinput()"
+                             >
+                           </form>
+                     <img src="https://granitegrok.com/wp-content/uploads/2018/09/Ads.jpg" width="100%"
+                     onclick="clickedad()"
+                     onmouseenter = "mouseent()"
+                     onmouseleave = "mouselea()"
+                     onmousemove="mousemov(event)"
+                     
+                     >
+                 </div>
+                 <div class="col-sm-3">
+                     <h4 style="color:red">DETECTED EVENTS</h4>
+                     
+                     <div id="text"></div>
+                     <div id="clicked"></div>
+                     <div id="clickedad"></div>
+                     <div id="focusin"></div>
+                     <div id="focusout"></div>
+                     <div id="keypress"></div>
+                     <div id="mouseent"></div>
+                     <div id="mouselea"></div>
+                     <div id="mouseentft"></div>
+                     <div id="mouseleaft"></div>
+                     <div id="mouseco"></div>
+                    </div>
+               
+                <div class="col-sm-4">
+                        <h4 style="color:red">USER COUNT OF EVENTS</h4>
+                    <div id="bar1"></div>
+                    <div id="bar2"></div>
+                    <div id="bar3"></div>
+                    <div id="bar4"></div>
+                    <div id="bar5"></div>
+                    <div id="bar6"></div>
+                    <div id="bar7"></div>
+                    <div id="bar8"></div>
+                    <div id="bar9"></div>
+                    <div id="bar10"></div>
+                </div>
+            </div>
+        </div>
+            <script>
+                      let bar1 = 0;
+                    function change(value){
+                   
+                    document.getElementById("text").innerHTML = "The value has been changed to <b>" + value;
+                    bar1++;
+                    document.getElementById("bar1").innerHTML =  "this has been changed <b>" + bar1 + " times </b>"
+                    }
+
+
+                    let bar2= 0;
+                    function clicked(){
+                       
+                        document.getElementById("clicked").innerHTML = "the <b>input</b> text has been clicked";
+                       
+                        bar2++;
+                        document.getElementById("bar2").innerHTML = "the input has been clicked <b>" + bar2 + " times </b>"
+                    }
+
+
+                    let bar3 = 0;
+                    function clickedad(){
+                        
+                        document.getElementById("clickedad").innerHTML = "the <b>AD</b> text has been clicked";
+                       
+                        bar3++
+                        document.getElementById("bar3").innerHTML = "this AD has been clicked <b>" + bar3 + " times </b>"
+                    }
+
+                    let bar4 = 0;
+                    function focussin(){
+                       
+                        document.getElementById("focusin").innerHTML = "The input has been <b>Focused In</b>";
+                  
+                        bar4++
+                        document.getElementById("bar4").innerHTML = "the input has been focused in <b>" + bar4 + " times </b>"
+                    }
+
+
+                    let bar5 = 0;
+                    function focussout(){
+                        
+                        document.getElementById("focusout").innerHTML = "The input has been <b>Focused Out</b>";
+                      
+                        bar5++
+                        document.getElementById("bar5").innerHTML = "the input has been focused out <b>" + bar5 + " times </b>"
+                    }
+                     
+                    let bar6 = 0;
+                    function keypress(){
+                       
+                        document.getElementById("keypress").innerHTML = "User <b>Key Pressed</b> inside the <b>input</b>"
+                     
+                        bar6++
+                        document.getElementById("bar6").innerHTML = "user key pressed inside the input <b>" + bar6 + " times </b>"
+                    }
+
+
+
+                    let bar7 = 0;
+                    function mouseent(){
+                       
+                        document.getElementById("mouseent").innerHTML = "mouse has been entered in <b>AD</b>"
+                      
+                        bar7++
+                        document.getElementById("bar7").innerHTML = "mouse has been entered the AD <b>" + bar7 + " times </b>"
+                    }
+
+
+
+                    let bar8 = 0;
+                    function mouselea(){
+                       
+                        document.getElementById("mouselea").innerHTML = "Mouse has been left in <b>AD</b>"
+                      
+                        bar8++
+                        document.getElementById("bar8").innerHTML = "mouse has left the AD <b>" + bar8 + " times </b>"
+                    }
+
+
+
+                    let bar9 = 0;
+                    function mouseentforinput(){
+                        
+                        document.getElementById("mouseentft").innerHTML = "Mouse has been Hovered in <b>Input</b>"
+                    
+                        bar9++
+                        document.getElementById("bar9").innerHTML = "mouse has been hovered in input <b>" + bar9 + " times </b>"
+                    }
+
+
+                    let bar10 = 0;
+                    function mouseleaforinput(){
+                        
+                        document.getElementById("mouseleaft").innerHTML = "Mouse has been Hovered out <b>Input</b>"
+                  
+                        bar10++
+                        document.getElementById("bar10").innerHTML = "mouse has been hovered out input <b>" + bar10 + " times </b>"
+                    }
+
+
+                     
+                    function mousemov(e){
+                        let x = e.clientX;
+                        let y = e.clientY;
+                        let coord  = "Mouse is at Co-ordinates:(<b>" + x + "," + y + "</b>)";
+                        document.getElementById("mouseco").innerHTML = coord;
+                    }
+
+                  
+
+                    $.getJSON('https://api.ipify.org?format=json', function(data){
+                                document.getElementById("ip").innerHTML  = "User IP Address :<b> " + data.ip +"</b>";
+                       });
+             </script>
+
+        </body>
+</html>
